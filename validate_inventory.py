@@ -34,3 +34,21 @@ while not valid_price:
 
     except ValueError:
         print ("Error: Please enter a valid number.")
+
+#------ Validate product quantity --------
+
+valid_quantity = False
+
+while not valid_quantity:
+
+    try:
+        quantity = int (input("Enter the product quantity: "))
+
+        if quantity <= 0:
+            print ("Error: Quantity must be greater than 0.")
+
+        else:
+            valid_quantity = True
+
+    except ValueError:
+        print ("Error: Please enter a valid integer.")
