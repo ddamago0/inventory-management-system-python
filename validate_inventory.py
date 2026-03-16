@@ -10,9 +10,9 @@ def validate_inventory():
         name = input("Enter the product name: ").strip()
 
         if name == "":
-            print("Enter: Product name cannot be empty.")
+            print("Error: Product name cannot be empty.")
 
-        elif not name.repleace(" ","").isalpha():
+        elif not name.replace(" ","").isalpha():
             print ("Error: Product name cannot contain numbers or symbols.")
 
         else:
