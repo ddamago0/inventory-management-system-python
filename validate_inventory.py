@@ -20,35 +20,44 @@ def validate_inventory():
 
 #------ Validate product price --------
 
-valid_price = False
+    valid_price = False
 
-while not valid_price:
-    try:
-        price = float (input("Enter the product price: "))
+    while not valid_price:
+        try:
+            price = float (input("Enter the product price: "))
 
-        if price <= 0:
-            print ("Error: Price must be greater than 0.")
+            if price <= 0:
+                print ("Error: Price must be greater than 0.")
 
-        else:
-            valid_price = True
+            else:
+                valid_price = True
 
-    except ValueError:
-        print ("Error: Please enter a valid number.")
+        except ValueError:
+            print ("Error: Please enter a valid number.")
 
 #------ Validate product quantity --------
 
-valid_quantity = False
+    valid_quantity = False
 
-while not valid_quantity:
+    while not valid_quantity:
 
-    try:
-        quantity = int (input("Enter the product quantity: "))
+        try:
+            quantity = int (input("Enter the product quantity: "))
 
-        if quantity <= 0:
-            print ("Error: Quantity must be greater than 0.")
+            if quantity <= 0:
+                print ("Error: Quantity must be greater than 0.")
 
-        else:
-            valid_quantity = True
+            else:
+                valid_quantity = True
 
-    except ValueError:
-        print ("Error: Please enter a valid integer.")
+        except ValueError:
+            print ("Error: Please enter a valid integer.")
+
+# Create dictionary with the product data
+    product = {
+        "name":name,
+        "price":price,
+        "quantity":quantity
+    }
+
+    return product
