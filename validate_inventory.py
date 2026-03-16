@@ -17,3 +17,20 @@ def validate_inventory():
 
         else:
             valid_name = True
+
+#------ Validate product price --------
+
+valid_price = False
+
+while not valid_price:
+    try:
+        price = float (input("Enter the product price: "))
+
+        if price <= 0:
+            print ("Error: Price must be greater than 0.")
+
+        else:
+            valid_price = True
+
+    except ValueError:
+        print ("Error: Please enter a valid number.")
