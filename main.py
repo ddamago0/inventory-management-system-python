@@ -2,6 +2,7 @@
 from validate_inventory import validate_inventory
 from show_inventory import show_inventory
 from calculate_statistics import calculate_statistics
+from add_product import add_product
 
 # Main function that controls the program
 def main():
@@ -26,9 +27,7 @@ def main():
 
         # Option 1: Add product
         if option == "1":
-            product = validate_inventory()
-            inventory.append(product)
-            print ("Product added successfully.")
+            add_product(inventory)
 
         # Option 2: Show inventory
         elif option == "2":
