@@ -1,40 +1,49 @@
 # Import function from week 1
 from validate_inventory import validate_inventory
 
-# Create empty inventory list
-inventory = []
+# Main function that controls the program
+def main():
 
-# Control variable for the loop
-running = True
 
-# Main menu loop
-while running:
+    # Create empty inventory list
+    inventory = []
 
-    print("\n--- INVENTORY MENU ---")
-    print("1. Add product")
-    print("2. Show inventory")
-    print("3. Calculate statistics")
-    print("4. Exit")
+    # Control variable for the loop
+    running = True
 
-    option = input("Choose an option: ")
+    # Main menu loop
+    while running:
 
-    # Option 1: Add product
-    if option == "1":
-        print("Add product option")
+        print("\n--- INVENTORY MENU ---")
+        print("1. Add product")
+        print("2. Show inventory")
+        print("3. Calculate statistics")
+        print("4. Exit")
 
-    # Option 2: Show inventory
-    elif option == "2":
-        print("Show inventory option")
+        option = input("Choose an option: ")
 
-    # Option 3: Statistics
-    elif option == "3":
-        print("Calculate statistics option")
+        # Option 1: Add product
+        if option == "1":
+            product = validate_inventory()
+            inventory.append(product)
+            print ("Product added successfully.")
 
-    # Option 4: Exit
-    elif option == "4":
-        print("Exiting program...")
-        running = False
+        # Option 2: Show inventory
+        elif option == "2":
+            print("Show inventory option")
 
-    # Invalid option
-    else:
-        print("Invalid option. Try again.")
+        # Option 3: Statistics
+        elif option == "3":
+            print("Calculate statistics option")
+
+        # Option 4: Exit
+        elif option == "4":
+            print("Exiting program...")
+            running = False
+
+        # Invalid option
+        else:
+            print("Invalid option. Try again.")
+
+if __name__ == "__main__":
+    main()
