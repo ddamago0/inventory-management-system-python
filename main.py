@@ -1,5 +1,6 @@
 # Import function from week 1
 from validate_inventory import validate_inventory
+from show_inventory import show_inventory
 
 # Main function that controls the program
 def main():
@@ -30,7 +31,7 @@ def main():
 
         # Option 2: Show inventory
         elif option == "2":
-            print("Show inventory option")
+            show_inventory(inventory)
 
         # Option 3: Statistics
         elif option == "3":
