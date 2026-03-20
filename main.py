@@ -1,8 +1,8 @@
 # Import function from week 1
 from validate_inventory import validate_inventory
-from show_inventory import show_inventory
-from calculate_statistics import calculate_statistics
-from add_product import add_product
+from show_inventory_week2 import show_inventory
+from calculate_statistics_week2 import calculate_statistics
+from add_product_week2 import add_product
 
 # Main function that controls the program
 def main():
