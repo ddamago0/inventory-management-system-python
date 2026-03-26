@@ -22,7 +22,7 @@ def main():
         print("3. Calculate statistics")
         print("4. Exit")
 
-        option = int (input("Choose an option: "))
+        option = input("Choose an option: ")
 
         # Option 1: Add product
         if option == "1":
