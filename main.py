@@ -1,5 +1,4 @@
 # Import function from week 1
-from validate_inventory import validate_inventory
 from show_inventory_week2 import show_inventory
 from calculate_statistics_week2 import calculate_statistics
 from add_product_week2 import add_product
@@ -23,7 +22,7 @@ def main():
         print("3. Calculate statistics")
         print("4. Exit")
 
-        option = input("Choose an option: ")
+        option = int (input("Choose an option: "))
 
         # Option 1: Add product
         if option == "1":
