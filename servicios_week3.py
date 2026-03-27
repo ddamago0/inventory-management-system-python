@@ -105,5 +105,5 @@ def calcular_estadisticas(inventario):
         "unidades_totales": unidades_totales,
         "valor_total": valor_total,
         "producto_mas_caro": producto_mas_caro,
-        "producto_mayor:stock": producto_mayor_stock
+        "producto_mayor_stock": producto_mayor_stock
     }

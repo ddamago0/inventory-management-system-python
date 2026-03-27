@@ -1,4 +1,51 @@
 from servicios_week3 import *
+#Validar float
+def input_float(mensaje):
+    f = True
+    while f:
+        try:
+            valor = float(input(mensaje))
+
+            if valor <= 0:
+                print ("Error: value must be positive.")
+            else:
+                return valor
+        
+        except ValueError:
+            print ("Error: Please enter a valid number.")
+            
+
+#Validar int
+def input_int(mensaje):
+    i = True
+    while i:
+        try:
+            valor = int(input(mensaje))
+
+            if valor <= 0:
+                print("Error: value must be positive.")
+            else:
+                return valor
+
+        except ValueError:
+            print("Error: please enter a valid integer.")
+
+#Validar str
+def input_string(mensaje):
+    s = False
+    while not s:
+        valor = input(mensaje).strip()
+
+        if valor == "":
+            print("Error: cannot be empty.")
+
+        elif not valor.replace(" ","").isalpha():
+            print ("Error: product name cannot contain numbers or symbols.")
+        
+        else:
+            s = True
+            return valor
+        
 
 def app():
     inventario = []
@@ -18,11 +65,12 @@ def app():
 
         opcion = input ("Seleccione una opcion: ")
 
+
         #Opcion 1
         if opcion == "1":
-            nombre = input("Ingrese el nombre: ")
-            precio = float (input("Ingrese el precio: "))
-            cantidad = int (input("Ingrese la cantidad"))
+            nombre = input_string("Ingrese el nombre: ")
+            precio =  input_float("Ingrese el precio: ")
+            cantidad = input_int("Ingrese la cantidad: ")
 
             agregar_producto(inventario, nombre, precio, cantidad)
             print ("Producto agregado.")
@@ -33,7 +81,7 @@ def app():
 
         #Opcion 3
         elif opcion == "3":
-            nombre = input("Nombre a buscar: ")
+            nombre = input_string("Nombre a buscar: ")
             producto = buscar_producto(inventario, nombre)
 
             if producto:
@@ -44,9 +92,9 @@ def app():
 
         #Opcion 4
         elif opcion == "4":
-            nombre = input ("Nombre a actualizar: ")
-            precio = float (input("Nuevo precio: "))
-            cantidad = int (input("Nueva cantidad: "))
+            nombre = input_string ("Nombre a actualizar: ")
+            precio = input_float("Nuevo precio: ")
+            cantidad = input_int("Nueva cantidad: ")
 
             actualizado = actualizar_producto(inventario, nombre, precio, cantidad)
 
@@ -58,7 +106,7 @@ def app():
 
         #Opcion 5
         elif opcion == "5":
-            nombre = input("Nombre a eliminar: ")
+            nombre = input_string("Nombre a eliminar: ")
 
             eliminado = eliminar_producto (inventario, nombre)
 
