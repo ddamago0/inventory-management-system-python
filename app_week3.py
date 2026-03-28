@@ -123,7 +123,7 @@ def app():
 
             if stats:
                 print (f"Total unidades: {stats['unidades_totales']}")
-                print (f"Valor total: {stats['valor_total']}")
+                print (f"Valor total: {stats['valor_total']:.2f}")
                 print (f"Producto mas caro: {stats['producto_mas_caro']['nombre']}")
                 print (f"Mayor stock: {stats['producto_mayor_stock']['nombre']}")
 
@@ -142,19 +142,33 @@ def app():
             ruta = input("Enter file path: ")
             nuevo_inventario = cargar_csv(ruta)
 
-            if len(nuevo_inventario) > 0:
+            if not nuevo_inventario:
+                print ("No valid data loaded.")
+                continue
 
-                decision = input("Overwrite inventory? (S/N): ").lower()
+            decision = input("Overwrite inventory? (S/N): ").lower()
 
             if decision == "s":
                 inventario = nuevo_inventario
                 print("Inventory replaced.")
 
-            else:
-                # Fusión simple
-                inventario.extend(nuevo_inventario)
-                print("Inventory merged.")
+            elif decision == "n":
+                for nuevo in nuevo_inventario:
+                    existente = buscar_producto(inventario, nuevo["nombre"])
+                    if existente:
+                        # Sumar cantidad
+                        existente["cantidad"] += nuevo["cantidad"]
 
+                        # actualizar precio
+                        existente["precio"] = nuevo["precio"]
+
+                    else:
+                        inventario.append(nuevo)
+
+                print ("Inventory merged.")
+
+            else:
+                print ("Invalid option.")
         
         #Opcion 9
         elif opcion == "9":

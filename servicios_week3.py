@@ -28,7 +28,7 @@ def mostrar_inventario(inventario):
         return
     
     for producto in inventario:
-        print (f"{producto['nombre']} | {producto['precio']} | {producto['cantidad']}")
+        print (f"Producto: {producto['nombre']} | Precio: {producto['precio']: .2f} | Cantidad: {producto['cantidad']}")
 
 def buscar_producto (inventario, nombre):
     """
