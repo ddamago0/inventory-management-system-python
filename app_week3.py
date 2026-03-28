@@ -1,5 +1,6 @@
 from servicios_week3 import *
-from archivos import guardar_csv
+from archivos_week3 import guardar_csv
+from archivos_week3 import cargar_csv
 #Validar float
 def input_float(mensaje):
     f = True
@@ -134,6 +135,25 @@ def app():
         elif opcion == "7":
             ruta = input("Enter file path (Example: inventario.csv): ")
             guardar_csv(inventario, ruta)
+
+
+        #Opcion 8
+        elif opcion == "8":
+            ruta = input("Enter file path: ")
+            nuevo_inventario = cargar_csv(ruta)
+
+            if len(nuevo_inventario) > 0:
+
+                decision = input("Overwrite inventory? (S/N): ").lower()
+
+            if decision == "s":
+                inventario = nuevo_inventario
+                print("Inventory replaced.")
+
+            else:
+                # Fusión simple
+                inventario.extend(nuevo_inventario)
+                print("Inventory merged.")
 
         
         #Opcion 9
