@@ -48,13 +48,13 @@ def cargar_csv(ruta):
 
             lineas = archivo.readlines()
 
-            # Validar header
+            # Validate header
             header = lineas[0].strip()
             if header != "nombre,precio,cantidad":
                 print("Error: invalid file format.")
                 return []
 
-            # Leer datos
+            # read data
             for linea in lineas[1:]:
 
                 partes = linea.strip().split(",")

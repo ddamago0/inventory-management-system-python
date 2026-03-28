@@ -1,7 +1,7 @@
 from servicios_week3 import *
 from archivos_week3 import guardar_csv
 from archivos_week3 import cargar_csv
-#Validar float
+#Validate float
 def input_float(mensaje):
     f = True
     while f:
@@ -17,7 +17,7 @@ def input_float(mensaje):
             print ("Error: Please enter a valid number.")
             
 
-#Validar int
+#Validate int
 def input_int(mensaje):
     i = True
     while i:
@@ -32,7 +32,7 @@ def input_int(mensaje):
         except ValueError:
             print("Error: please enter a valid integer.")
 
-#Validar str
+#Validate str
 def input_string(mensaje):
     s = False
     while not s:
@@ -55,27 +55,27 @@ def app():
 
     while running:
         print("\n--- MENU ---")
-        print("1. Agregar producto")
-        print("2. Mostrar inventario")
-        print("3. Buscar producto")
-        print("4. Actualizar producto")
-        print("5. Eliminar producto")
-        print("6. Estadísticas")
-        print("7. Guardar CSV")
-        print("8. Cargar CSV")
-        print("9. Salir")
+        print("1. Add product")
+        print("2. Show inventory")
+        print("3. Search product")
+        print("4. Update product")
+        print("5. Delete product")
+        print("6. Statistics")
+        print("7. Save CSV")
+        print("8. Load CSV")
+        print("9. Exit")
 
-        opcion = input ("Seleccione una opcion: ")
+        opcion = input ("Select an option: ")
 
 
         #Opcion 1
         if opcion == "1":
-            nombre = input_string("Ingrese el nombre: ")
-            precio =  input_float("Ingrese el precio: ")
-            cantidad = input_int("Ingrese la cantidad: ")
+            nombre = input_string("Enter the product name: ")
+            precio =  input_float("Enter the price: ")
+            cantidad = input_int("Enter the quantity: ")
 
             agregar_producto(inventario, nombre, precio, cantidad)
-            print ("Producto agregado.")
+            print ("Saved product.")
 
         #Opcion 2
         elif opcion == "2":
@@ -83,52 +83,52 @@ def app():
 
         #Opcion 3
         elif opcion == "3":
-            nombre = input_string("Nombre a buscar: ")
+            nombre = input_string("Name to search: ")
             producto = buscar_producto(inventario, nombre)
 
             if producto:
                 print (producto)
 
             else:
-                print ("Producto no encontrado.")
+                print ("Product not found.")
 
         #Opcion 4
         elif opcion == "4":
-            nombre = input_string ("Nombre a actualizar: ")
-            precio = input_float("Nuevo precio: ")
-            cantidad = input_int("Nueva cantidad: ")
+            nombre = input_string ("Name to update: ")
+            precio = input_float("New price: ")
+            cantidad = input_int("New quantity: ")
 
             actualizado = actualizar_producto(inventario, nombre, precio, cantidad)
 
             if actualizado:
-                print ("Producto actualizado.")
+                print ("Updated product.")
 
             else:
-                print ("Producto no encontrado.")
+                print ("Product not found.")
 
         #Opcion 5
         elif opcion == "5":
-            nombre = input_string("Nombre a eliminar: ")
+            nombre = input_string("Name to delete: ")
 
             eliminado = eliminar_producto (inventario, nombre)
 
             if eliminado:
-                print("Producto eliminado.")
+                print("Product removed.")
             else:
-                print("Producto no encontrado.")
+                print("Product not found.")
 
         #Opcion 6
         elif opcion == "6":
             stats = calcular_estadisticas(inventario)
 
             if stats:
-                print (f"Total unidades: {stats['unidades_totales']}")
-                print (f"Valor total: {stats['valor_total']:.2f}")
-                print (f"Producto mas caro: {stats['producto_mas_caro']['nombre']}")
-                print (f"Mayor stock: {stats['producto_mayor_stock']['nombre']}")
+                print (f"Total units: {stats['unidades_totales']}")
+                print (f"Total value: {stats['valor_total']:.2f}")
+                print (f"Most expensive product: {stats['producto_mas_caro']['nombre']}")
+                print (f"Greater stock: {stats['producto_mayor_stock']['nombre']}")
 
             else:
-                print ("Inventario vacio.")
+                print ("empty inventory.")
 
 
         #Opcion 7
@@ -172,11 +172,11 @@ def app():
         
         #Opcion 9
         elif opcion == "9":
-            print ("Saliendo...")
+            print ("leaving...")
             running = False
 
         else:
-            print ("Opcion invalida.")
+            print ("Invalid option.")
 
 if __name__ == "__main__":
     app()
