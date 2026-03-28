@@ -1,4 +1,5 @@
 from servicios_week3 import *
+from archivos import guardar_csv
 #Validar float
 def input_float(mensaje):
     f = True
@@ -127,6 +128,12 @@ def app():
 
             else:
                 print ("Inventario vacio.")
+
+
+        #Opcion 7
+        elif opcion == "7":
+            ruta = input("Enter file path (Example: inventario.csv): ")
+            guardar_csv(inventario, ruta)
 
         
         #Opcion 9
