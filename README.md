@@ -1,59 +1,118 @@
-# inventory-management-system-python
-CLI inventory management system developed in Python as part of a RIWI learning project. The system evolves weekly adding new features.
+# Inventory Management System (Python CLI)
+
+CLI inventory management system developed in Python as part of a RIWI learning project. The system evolves weekly, adding new features and improving structure.
 
 ---
 
-## Week 1 - Fundamentals and Basic Inventory Operations
+## 📌 Project Overview
 
-In this first week the program allows the user to register a product with its name, price and quantity.  
-The system validates the data entered, calculates the total cost and shows the result in the console.
-
-### Features implemented
-
-- Product name input
-- Price input
-- Quantity input
-- Input validation
-- Total cost calculation
-- Product summary in console
+This project is a console-based inventory system that allows users to manage products, calculate statistics, and persist data using CSV files.
 
 ---
 
-## Project Structure
+## 🚀 Features
 
-inventory-management-system-python/
+### Week 1
 
-- main.py → main program that connects all functions
-- validate_inventory.py → validates user input
-- calculate_total.py → calculates the total cost
-- show_result.py → displays the result in the console
-- docs/ → project documentation (flowchart)
+* Register product (name, price, quantity)
+* Calculate total cost
+* Input validation
+* Console output formatting
+
+### Week 2
+
+* Interactive menu system
+* Add multiple products
+* Show inventory
+* Calculate basic statistics
+* Use of lists and dictionaries
+
+### Week 3
+
+* Full CRUD system:
+
+  * Add product
+  * Show inventory
+  * Search product
+  * Update product
+  * Delete product
+* Advanced statistics:
+
+  * Total units
+  * Total value
+  * Most expensive product
+  * Highest stock product
+* CSV persistence:
+
+  * Save inventory to file
+  * Load inventory from file
+  * Merge or overwrite data
+* Error handling and input validation
+* Modular architecture
 
 ---
 
-## How to Run the Program
+## 🧱 Project Structure
 
-1. Open the project in Visual Studio Code
-2. Open the terminal
-3. Run the following command:
-
-python main.py
-
----
-
-## Example Output
-
-Enter the product name: Laptop  
-Enter the product price: 1200  
-Enter the product quantity: 2  
-
-Product: Laptop | Price: 1200 | Quantity: 2 | Total: 2400
+```
+app.py                # Main application (menu and user interaction)
+servicios_week3.py   # Inventory logic (CRUD + statistics)
+archivos.py          # CSV file handling
+docs/                # Flowcharts and documentation
+README.md            # Project documentation
+```
 
 ---
 
-## Technologies Used
+## 🧠 Technologies Used
 
-- Python
-- Git
-- GitHub
-- Visual Studio Code
+* Python
+* CSV file handling
+* Lists and dictionaries
+* Functions and modular programming
+
+---
+
+## ▶️ How to Run
+
+1. Open terminal
+2. Navigate to project folder
+3. Run:
+
+```
+python app.py
+```
+
+---
+
+## 💾 CSV Format
+
+```
+nombre,precio,cantidad
+Laptop,1000,2
+Mouse,50,3
+```
+
+---
+
+## ⚠️ Notes
+
+* The program validates user input to prevent crashes.
+* Invalid CSV rows are ignored and counted.
+* Inventory can be merged or overwritten when loading data.
+
+---
+
+## 📚 Learning Goals
+
+* Understand control flow (if, while, for)
+* Work with data structures (lists and dictionaries)
+* Apply modular programming
+* Handle files using CSV
+* Implement error handling
+
+---
+
+## 👨‍💻 Author
+
+The coder is Daniel David Martinez Gonzalez - Python learning project
